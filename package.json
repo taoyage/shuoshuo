@@ -1,0 +1,25 @@
+{
+  "name": "shuoshuo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taoyage/shuoshuo.git"
+  },
+  "author": "accord",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taoyage/shuoshuo/issues"
+  },
+  "homepage": "https://github.com/taoyage/shuoshuo#readme",
+  "dependencies": {
+    "ejs": "^2.5.3",
+    "express": "^4.14.0",
+    "formidable": "^1.0.17",
+    "mongodb": "^2.2.11"
+  }
+}
