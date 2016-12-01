@@ -1,33 +1,31 @@
 /*
  * @Author: taoyage
- * @FileName: register.js                          
- * @Date:   2016-11-29 19:58:17                            
+ * @FileName: login.js                         
+ * @Date:   2016-12-01 13:48:35                            
  * @Last Modified by:   taoyage        
- * @Last Modified time: 2016-12-01 15:01:24        
+ * @Last Modified time: 2016-12-01 15:19:01        
  */
 
 'use strict';
 
 ((window) => {
-    const register = document.getElementById('register');
     const username = document.getElementById('username');
     const password = document.getElementById('password');
-    const hint = document.getElementById('hint');
+    const login = document.getElementById('login');
     let data = {};
 
-    register.onclick = () => {
+    login.onclick = () => {
         data.username = username.value;
         data.password = password.value;
-        $.post('/doRegister', data, (data, status) => {
+        console.log(data);
+        $.post('doLogin', data, (data) => {
             if (data.err) {
                 hint.style.display = 'block';
                 hint.innerHTML = data.err;
-                return;
             } else {
-                console.log(status);
                 window.location = '/';
             }
-        })
+        });
         return false;
     };
-})(window);
+})(window)
