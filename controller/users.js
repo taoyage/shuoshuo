@@ -1,9 +1,9 @@
 /*
  * @Author: taoyage
- * @FileName: users.js 						   
- * @Date:   2016-12-01 14:22:48 						   
- * @Last Modified by:   taoyage 	   
- * @Last Modified time: 2016-12-01 15:20:13 	   
+ * @FileName: users.js                         
+ * @Date:   2016-12-01 14:22:48                            
+ * @Last Modified by:   taoyage        
+ * @Last Modified time: 2016-12-02 20:25:24        
  */
 
 'use strict';
@@ -12,6 +12,8 @@ const formidable = require('formidable');
 const MongoClient = require('mongodb').MongoClient;
 const db = require('../models/db');
 const md5 = require('../models/md5');
+const path = require("path");
+const fs = require("fs");
 
 exports.doRegister = (req, res, next) => {
     let form = new formidable.IncomingForm();
@@ -56,6 +58,31 @@ exports.doLogin = (req, res, next) => {
                 res.send(result);
             } else {
                 res.send({ err: err });
+            }
+        });
+    });
+};
+
+exports.doPersonal = (req, res, next) => {
+    let form = new formidable.IncomingForm();
+    form.uploadDir = path.normalize("./public/images/avatar");
+    form.parse(req, (err, fields, files) => {
+        let oldpath = files.avatar.path;
+        let newpath = path.normalize("./public/images/avatar/") + req.session.username + ".jpg";
+        fs.rename(oldpath, newpath, function(err) {
+            if (err) {
+                return res.send({ err: '设置头像失败' });
+            } else {
+                req.session.avatar = req.session.username + '.jpg';
+                db.updata('users', { 'username': req.session.username }, {
+                    $set: { 'avatar': req.session.avatar }
+                }, (err, result) => {
+                    if(err){
+                        return res.send({err:err});
+                    }else{
+                        res.send('result');
+                    }
+                });
             }
         });
     });

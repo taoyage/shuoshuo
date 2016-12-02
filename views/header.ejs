@@ -11,7 +11,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">首页</a></li>
+                    <li class="active"><a href="/">首页</a></li>
                     <li><a href="#">我的说说</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
@@ -29,12 +29,12 @@
                 <% if(login){ %>
                      <ul class="nav navbar-nav navbar-right">
                         <li><a>欢迎登陆! <%=username%></a></li>
-                        <li><a href="">设置个人资料</a></li>
+                        <li><a href="/personal">设置个人资料</a></li>
                     </ul>
                 <% }else{ %>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/register">登陆</a></li>
-                        <li><a href="#">注册</a></li>
+                        <li><a href="/login">登陆</a></li>
+                        <li><a href="/register">注册</a></li>
                     </ul>
                 <% } %>
             </div>

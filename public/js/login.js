@@ -3,7 +3,7 @@
  * @FileName: login.js                         
  * @Date:   2016-12-01 13:48:35                            
  * @Last Modified by:   taoyage        
- * @Last Modified time: 2016-12-01 15:19:01        
+ * @Last Modified time: 2016-12-02 17:09:08        
  */
 
 'use strict';
@@ -24,6 +24,7 @@
                 hint.innerHTML = data.err;
             } else {
                 window.location = '/';
+                console.log(data);
             }
         });
         return false;
