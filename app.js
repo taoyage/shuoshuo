@@ -3,17 +3,16 @@
  * @FileName: app.js 						   
  * @Date:   2016-11-29 17:12:24 						   
  * @Last Modified by:   taoyage 	   
- * @Last Modified time: 2016-12-01 20:39:13 	   
+ * @Last Modified time: 2016-12-04 14:44:33 	   
  */
 
 'use strict';
 
 const express = require('express');
 const path = require('path');
-const router = require('./controller/router');
 const session = require('express-session');
-const users = require('./controller/users');
 const app = express();
+const router = require('./controller/router');
 
 /***********************session设置*************************/
 app.use(session({
@@ -31,17 +30,8 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, './public')));
 
 
-/***********************渲染页面路由*************************/
-app.get('/', router.showIndex);
-app.get('/register', router.showRegister);
-app.get('/login', router.showLogin);
-app.get('/personal', router.showPersonal);
-
-
-/***********************处理请求路由*************************/
-app.post('/doRegister', users.doRegister);
-app.post('/doLogin', users.doLogin);
-app.post('/doPersonal', users.doPersonal);
+/***********************路由配置*************************/
+router(app);
 
 
 // =========================================================================== //

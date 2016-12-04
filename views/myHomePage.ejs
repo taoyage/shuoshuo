@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <title>shuoshuo</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/home.css">
+</head>
+
+<body>
+    <% include header.ejs %>
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <div class="container">
+                <img class="avatar" src="../images/avatar/<%= avatar %>" alt="" />
+                <h3><%= user %></h3>
+            </div>
+        </div>
+        <div class="container">
+            <%for(var i = 0 ; i < data.length ; i++){%>
+                <div class="one">
+                    <p>
+                        <%=data[i].comment%>
+                    </p>
+                    <p>
+                        <%=data[i].date%>
+                    </p>
+                </div>
+                <%}%>
+        </div>
+        </div>
+        <!-- /container -->
+        <!-- Bootstrap core JavaScript
+      ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="../vendor/jquery.min.js"></script>
+        <script src="../vendor/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -2,11 +2,75 @@
 * @Author: taoyage
 * @Date:   2016-12-02 20:26:26
 * @Last Modified by:   taoyage
-* @Last Modified time: 2016-12-02 20:28:14
+* @Last Modified time: 2016-12-04 15:02:05
 */
+
+body {
+    background-color: #f5f8fa;
+    padding-top: 50px;
+}
 
 .avatar {
     width: 100px;
     height: 100px;
     border-radius: 50%;
+}
+
+.list-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 5px;
+    float: left;
+}
+
+.date {
+    color: #8899a6;
+    font-size: 13px;
+}
+
+.username {
+    margin-right: 10px;
+}
+
+.content {
+    margin-left: 58px;
+    padding-left: 10px;
+}
+
+.comment {
+    font-size: 15px;
+    font-family: "Microsoft YaHei";
+    margin-top: 5px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: normal;
+}
+
+#userWarp {
+    list-style-type: none;
+    padding:0;
+}
+
+#userWarp li {
+    position: relative;
+    height:38px;
+}
+
+#userWarp img {
+    width: 28px;
+    height: 28px;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#userWarp .users {
+    min-height: 28px;
+    margin-left:38px;
+}
+
+.panel-style{
+    border:none;
+    background : none;
 }

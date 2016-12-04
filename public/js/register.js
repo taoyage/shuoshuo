@@ -3,7 +3,7 @@
  * @FileName: register.js                          
  * @Date:   2016-11-29 19:58:17                            
  * @Last Modified by:   taoyage        
- * @Last Modified time: 2016-12-02 20:21:48        
+ * @Last Modified time: 2016-12-04 14:42:19        
  */
 
 'use strict';
